@@ -1,0 +1,27 @@
+{
+  "config_version": 2,
+  "dark": false,
+  "perspective": true,
+  "loadbuiltin": true,
+  "showicon": true,
+  "quark": false,
+  "enableNSFW": false,
+  "debug": true,
+  "validate": false,
+  "validationThreshold": 8.0,
+  "alwaysValidateEmote": false,
+  "playersafety": true,
+  "stopthreshold": 0.04,
+  "yratio": 0.75,
+  "fastmenu": {
+    "0": 846264910,
+    "1": 2007599949,
+    "2": -1108308279,
+    "3": 48659845,
+    "4": 39133942,
+    "5": 453356665,
+    "6": -432819277,
+    "7": 2091602184
+  },
+  "keys": []
+}

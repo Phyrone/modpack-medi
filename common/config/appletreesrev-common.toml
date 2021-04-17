@@ -1,0 +1,8 @@
+
+#[Apple Trees Rev. Mod - Config. File]
+[Recipes]
+	#[Enable/Disable] Gold Apple Sapling Recipe [true/false] | [false by Default]
+	GoldAppleSaplingRecipe = false
+	#[Enable/Disable] Notch Apple Recipe [true/false] | [false by Default]
+	NotchAppleRecipe = false
+
