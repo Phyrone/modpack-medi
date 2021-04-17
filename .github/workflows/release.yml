@@ -22,7 +22,7 @@ jobs:
       - run: mkdir dist
       - run: cp -rf common/* dist
       - run: cp -rf client/* dist
-      - run: cd dist && zip -rT9 ../client-technikpack.zip *
+      - run: cd dist && zip -rT9 ../client-technicpack.zip *
       - id: get_release
         uses: bruceadams/get-release@v1.2.2
         env:
