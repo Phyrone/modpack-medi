@@ -32,7 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           release_id: ${{ steps.get_release.outputs.id }}
-          assets_path: client-technikpack.zip
+          assets_path: client-techniclauncher.zip
   build-server:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
