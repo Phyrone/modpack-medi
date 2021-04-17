@@ -1,9 +1,12 @@
 # This is a basic workflow to help you get started with Actions
 
-name: BUILD
+name: RELEASE
 
 # Controls when the action will run. 
-on: [push,pull_request,workflow_dispatch]
+on:
+  release:
+    types:
+      - created
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,10 +22,17 @@ jobs:
       - run: mkdir dist
       - run: cp -rf common/* dist
       - run: cp -rf client/* dist
-      - uses: actions/upload-artifact@v2
+      - run: cd dist && zip -rT9 ../client-technikpack.zip *
+      - id: get_release
+        uses: bruceadams/get-release@v1.2.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - uses: dwenegar/upload-release-assets@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: Modpack-Client
-          path: dist/*
+          release_id: ${{ steps.get_release.outputs.id }}
+          assets_path: client-technikpack.zip
   build-server:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -34,7 +44,14 @@ jobs:
       - run: mkdir dist
       - run: cp -rf common/* dist
       - run: cp -rf server/* dist
-      - uses: actions/upload-artifact@v2
+      - run: cd dist && zip -rT9 ../server.zip *
+      - id: get_release
+        uses: bruceadams/get-release@v1.2.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - uses: dwenegar/upload-release-assets@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: Modpack-Server
-          path: dist/*
+          release_id: ${{ steps.get_release.outputs.id }}
+          assets_path: server.zip
