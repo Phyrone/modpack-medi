@@ -3,6 +3,6 @@
 	show_health_indicator = true
 	#Range: 1 ~ 10
 	long_press_count = 2
-	filter_animation = false
+	filter_animation = true
 	show_target_indicator = true
 
