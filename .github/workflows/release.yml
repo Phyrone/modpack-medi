@@ -24,7 +24,7 @@ jobs:
       - run: cp -rf client/* dist
       - run: cd dist && zip -rT9 ../client-technicpack.zip *
       - id: get_release
-        uses: bruceadams/get-release@v1.2.2
+        uses: bruceadams/get-release@v1.3.2
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - uses: dwenegar/upload-release-assets@v1
@@ -46,7 +46,7 @@ jobs:
       - run: cp -rf server/* dist
       - run: cd dist && zip -rT9 ../server.zip *
       - id: get_release
-        uses: bruceadams/get-release@v1.2.2
+        uses: bruceadams/get-release@v1.3.2
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - uses: dwenegar/upload-release-assets@v1
