@@ -19,7 +19,7 @@ jobs:
       - run: mkdir dist
       - run: cp -rf common/* dist
       - run: cp -rf client/* dist
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: Modpack-Client
           path: dist/*
@@ -34,7 +34,7 @@ jobs:
       - run: mkdir dist
       - run: cp -rf common/* dist
       - run: cp -rf server/* dist
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: Modpack-Server
           path: dist/*
